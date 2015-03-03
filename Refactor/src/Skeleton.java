@@ -1,5 +1,8 @@
 
 
+
+
+
 /**
  * Title:
  * Description:
@@ -9,23 +12,22 @@
  * @version 1.0
  */
 
-public class Ogre extends Monster
+public class Skeleton extends Monster
 {
 
-    public Ogre()
+    public Skeleton()
 	{
-		super("Oscar the Ogre", 200, 2, .6, .1, 30, 50, 30, 50);
-
+		super("Sargath the Skeleton", 100, 3, .8, .3, 30, 50, 30, 50);
 
     }//end constructor
 
 	public void attack(DungeonCharacter opponent)
 	{
-		System.out.println(name + " slowly swings a club toward's " +
+		System.out.println(name + " slices his rusty blade at " +
 							opponent.getName() + ":");
 		super.attack(opponent);
 
 	}//end override of attack
 
 
-}//end Monster class
+}//end class Skeleton
