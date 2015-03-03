@@ -21,22 +21,7 @@ public class PromptUser {
 	this task
 	---------------------------------------------------------------------*/
 	public Hero chooseHero() {
-		String choice;
-		Matcher matches;
-		Pattern pattern;
-
-		do {
-			System.out.println("Choose a hero:\n" + "1. Warrior\n"
-					+ "2. Sorceress\n" + "3. Thief");
-			System.out.print("Choice: ");
-			choice = kb.nextLine();
-
-			pattern = Pattern.compile("[1-3]");
-			matches = pattern.matcher(choice);
-
-			if (!matches.matches())
-				System.out.println("Invalid choice");
-		} while (!matches.matches());
+		String choice = promptForCharacter();
 
 		int option = Integer.parseInt(choice);
 
@@ -48,6 +33,33 @@ public class PromptUser {
 			return new Thief();
 
 	}// end chooseHero method
+
+	private String promptForCharacter() {
+		String choice;
+		Matcher matches;
+		Pattern pattern;
+
+		do {
+			displayCharacters();
+			choice = kb.nextLine();
+
+			pattern = Pattern.compile("[1-3]");
+			matches = pattern.matcher(choice);
+
+			if (!matches.matches())
+				System.out.println("Invalid choice");
+		} while (!matches.matches());
+
+		return choice;
+	}
+
+	private void displayCharacters() {
+		System.out.println("Choose a hero:");
+		System.out.println("1. Warrior");
+		System.out.println("2. Sorceress");
+		System.out.println("3. Thief");
+		System.out.print("Choice: ");
+	}
 
 	/*-------------------------------------------------------------------
 	playAgain allows gets choice from user to play another game.  It returns
