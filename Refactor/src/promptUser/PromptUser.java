@@ -27,8 +27,8 @@ public class PromptUser {
 	returns it.  It utilizes a polymorphic reference (Hero) to accomplish
 	this task
 	---------------------------------------------------------------------*/
-	public Hero chooseHero() {
-		String choice = promptForCharacter();
+	public Hero chooseHero(String[] characterClasses) {
+		String choice = promptForCharacter(characterClasses);
 
 		int option = Integer.parseInt(choice);
 
@@ -41,11 +41,11 @@ public class PromptUser {
 
 	}// end chooseHero method
 
-	private String promptForCharacter() {
+	private String promptForCharacter(String[] characterClasses) {
 		String choice;
 
 		do {
-			displayCharacters();
+			displayCharacters(characterClasses);
 			choice = kb.nextLine();
 
 			if (!regex(choice, "[1-3]"))
@@ -65,11 +65,10 @@ public class PromptUser {
 		return matches.matches();
 	}
 
-	private void displayCharacters() {
-		System.out.println("Choose a hero:");
-		System.out.println("1. Warrior");
-		System.out.println("2. Sorceress");
-		System.out.println("3. Thief");
+	private void displayCharacters(String[] characterClasses) {
+		for (int i = 0; i < characterClasses.length; i++)
+			System.out.println(i + ". " + characterClasses[i]);
+
 		System.out.print("Choice: ");
 	}
 
@@ -95,50 +94,49 @@ public class PromptUser {
 	}
 
 	public int forAttack(String character) {
-		String choice;
+		String choice, pattern = "[1-2]";
 
 		do {
+			System.out.println("1. Attack Opponent");
+
 			if (character.equalsIgnoreCase("Warrior"))
-				displayWarriorAttacks();
+				displayWarriorSpecialAttack();
 			else if (character.equalsIgnoreCase("Sorceress"))
-				displaySorceressAttacks();
+				displaySorceressSpecailAttack();
 			else
-				displayThiefAttacks();
+				displayThiefSpecialAttack();
 
 			System.out.print("Choose an option: ");
 			choice = kb.nextLine();
 
-			if (!regex(choice, "[1-2]"))
+			if (!regex(choice, pattern))
 				System.out.println("invalid choice!");
-		} while (!regex(choice, "[1-2]"));
+		} while (!regex(choice, pattern));
 
 		return Integer.parseInt(choice);
 	}
 
-	private void displayThiefAttacks() {
-		System.out.println("1. Attack Opponent");
+	private void displayThiefSpecialAttack() {
 		System.out.println("2. Surprise Attack");
 	}
 
-	private void displaySorceressAttacks() {
-		System.out.println("1. Attack Opponent");
+	private void displaySorceressSpecailAttack() {
 		System.out.println("2. Increase Hit Points");
 	}
 
-	private void displayWarriorAttacks() {
-		System.out.println("1. Attack Opponent");
+	private void displayWarriorSpecialAttack() {
 		System.out.println("2. Crushing Blow on Opponent");
 	}
 
 	public String forName() {
-		String str;
+		String str, pattern = "[A-z]+";
 
 		do {
 			System.out.print("Enter character name: ");
 			str = kb.nextLine();
-			if (!regex(str, "[A-z]+"))
+			if (!regex(str, pattern))
 				System.out.println("Invalid name.");
-		} while (!regex(str, "[A-z]+"));
+		} while (!regex(str, pattern));
 
 		return str;
 	}
