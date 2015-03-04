@@ -12,8 +12,13 @@ import promptUser.PromptUser;
 public class Warrior extends Hero {
 
 	public Warrior() {
-
-		super("Warrior", 125, 4, .8, 35, 60, .2);
+		super(.2);
+		super.setName("Warror");
+		super.setHitPoints(125);
+		super.setAttackSpeed(4);
+		super.setChanceToHit(.8);
+		super.setDamageMin(35);
+		super.setDamageMax(60);
 
 	}// end constructor
 

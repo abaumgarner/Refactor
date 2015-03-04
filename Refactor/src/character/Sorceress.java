@@ -15,8 +15,13 @@ public class Sorceress extends Hero {
 
 	// -----------------------------------------------------------------
 	public Sorceress() {
-		super("Sorceress", 75, 5, .7, 25, 50, .3);
-
+		super(.3);
+		super.setName("Sorceress");
+		super.setHitPoints(75);
+		super.setAttackSpeed(5);
+		super.setChanceToHit(.7);
+		super.setDamageMin(25);
+		super.setDamageMax(50);
 	}// end constructor
 
 	// -----------------------------------------------------------------

@@ -1,34 +1,36 @@
 package character;
 
-
-
-
-
 /**
- * Title:
- * Description:
- * Copyright:    Copyright (c) 2001
- * Company:
+ * Title: Description: Copyright: Copyright (c) 2001 Company:
+ * 
  * @author
  * @version 1.0
  */
 
-public class Gremlin extends Monster
-{
+public class Gremlin extends Monster {
 
-    public Gremlin()
-	{
-		super("Gnarltooth the Gremlin", 70, 5, .8, .4, 15, 30, 20, 40);
+	public Gremlin() {
+		super(.4, 20, 40);
 
-    }//end constructor
+		super.setName("Gnarltooth the Gremlin");
+		super.setHitPoints(70);
+		super.setAttackSpeed(5);
+		super.setChanceToHit(.8);
+		super.setDamageMin(15);
+		super.setDamageMax(30);
 
-	public void attack(DungeonCharacter opponent)
-	{
-		System.out.println(name + " jabs his kris at " +
-							opponent.getName() + ":");
+		/*
+		 * Monster(String name, int hitPoints, int attackSpeed, double
+		 * chanceToHit, double chanceToHeal, int damageMin, int damageMax, int
+		 * minHeal, int maxHeal)
+		 */
+	}// end constructor
+
+	public void attack(DungeonCharacter opponent) {
+		System.out.println(name + " jabs his kris at " + opponent.getName()
+				+ ":");
 		super.attack(opponent);
 
-	}//end override of attack
+	}// end override of attack
 
-
-}//end class Gremlin
+}// end class Gremlin

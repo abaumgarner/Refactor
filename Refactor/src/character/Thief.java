@@ -12,8 +12,13 @@ import promptUser.PromptUser;
 public class Thief extends Hero {
 
 	public Thief() {
-		super("Thief", 75, 6, .8, 20, 40, .5);
-
+		super(.5);
+		super.setName("Thief");
+		super.setHitPoints(75);
+		super.setAttackSpeed(6);
+		super.setChanceToHit(.8);
+		super.setDamageMin(20);
+		super.setDamageMax(40);
 	}// end constructor
 
 	public void surpriseAttack(DungeonCharacter opponent) {

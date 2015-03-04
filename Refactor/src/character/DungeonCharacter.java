@@ -48,13 +48,25 @@ public abstract class DungeonCharacter implements Comparable {
 	void setName(String str) {
 		this.name = str;
 	}
-	
+
 	void setHitPoints(int hp) {
 		this.hitPoints = hp;
 	}
-	
+
 	void setAttackSpeed(int as) {
-		
+		this.attackSpeed = as;
+	}
+
+	void setChanceToHit(double hitChance) {
+		this.chanceToHit = hitChance;
+	}
+
+	void setDamageMin(int minDamage) {
+		this.damageMin = minDamage;
+	}
+
+	void setDamageMax(int maxDamage) {
+		this.damageMax = maxDamage;
 	}
 
 	// -----------------------------------------------------------------
