@@ -1,3 +1,10 @@
+import character.Gremlin;
+import character.Hero;
+import character.Monster;
+import character.Ogre;
+import character.Skeleton;
+import promptUser.PromptUser;
+
 
 /**
  * Title: Dungeon.java
