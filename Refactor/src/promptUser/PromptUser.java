@@ -8,6 +8,7 @@ import character.Hero;
 import character.Sorceress;
 import character.Thief;
 import character.Warrior;
+import characterBuilders.HeroBuilder;
 
 /*
  * Aaron Baumgarner
@@ -22,22 +23,13 @@ public class PromptUser {
 		this.kb = new Scanner(System.in);
 	}
 
-	/*-------------------------------------------------------------------
-	chooseHero allows the user to select a hero, creates that hero, and
-	returns it.  It utilizes a polymorphic reference (Hero) to accomplish
-	this task
-	---------------------------------------------------------------------*/
 	public Hero chooseHero(String[] characterClasses) {
 		String choice = promptForCharacter(characterClasses);
 
 		int option = Integer.parseInt(choice);
+		HeroBuilder builder = new HeroBuilder(characterClasses[option - 1]);
 
-		if (option == 1)
-			return new Warrior();
-		else if (option == 2)
-			return new Sorceress();
-		else
-			return new Thief();
+		return builder.buildHero();
 
 	}// end chooseHero method
 
@@ -67,15 +59,11 @@ public class PromptUser {
 
 	private void displayCharacters(String[] characterClasses) {
 		for (int i = 0; i < characterClasses.length; i++)
-			System.out.println(i + ". " + characterClasses[i]);
+			System.out.println(i + 1 + ". " + characterClasses[i]);
 
 		System.out.print("Choice: ");
 	}
 
-	/*-------------------------------------------------------------------
-	playAgain allows gets choice from user to play another game.  It returns
-	true if the user chooses to continue, false otherwise.
-	---------------------------------------------------------------------*/
 	public boolean playAgain() {
 		String again;
 
@@ -83,11 +71,8 @@ public class PromptUser {
 		again = kb.nextLine();
 
 		return (again.equalsIgnoreCase("Y"));
-	}// end playAgain method
+	}
 
-	/*
-	 * Allows for the user to just press enter by using the Scanner object
-	 */
 	public String bailOut() {
 		System.out.print("\n-->q to quit, press enter to continue: ");
 		return kb.nextLine();

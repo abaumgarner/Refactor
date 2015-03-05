@@ -3,6 +3,7 @@ import character.Hero;
 import character.Monster;
 import character.Ogre;
 import character.Skeleton;
+import characterBuilders.MonsterBuilder;
 import promptUser.PromptUser;
 
 /**
@@ -38,41 +39,17 @@ public class Dungeon {
 	public static void main(String[] args) {
 		Hero theHero;
 		Monster theMonster;
+		MonsterBuilder monsterBuilder = new MonsterBuilder();
 
 		do {
 			theHero = user.chooseHero(characterClasses);
-			theMonster = generateMonster();
+			theMonster = monsterBuilder.buildMonster();
 			battle(theHero, theMonster);
 
 		} while (user.playAgain());
 
 		user.close();
-	}// end main method
-
-	/*-------------------------------------------------------------------
-	 generateMonster randomly selects a Monster and returns it.  It utilizes
-	 a polymorphic reference (Monster) to accomplish this task.
-	 ---------------------------------------------------------------------*/
-	public static Monster generateMonster() {
-		int choice;
-
-		choice = (int) (Math.random() * 3) + 1;
-
-		switch (choice) {
-		case 1:
-			return new Ogre();
-
-		case 2:
-			return new Gremlin();
-
-		case 3:
-			return new Skeleton();
-
-		default:
-			System.out.println("invalid choice, returning Skeleton");
-			return new Skeleton();
-		}// end switch
-	}// end generateMonster method
+	}
 
 	/*-------------------------------------------------------------------
 	 battle is the actual combat portion of the game.  It requires a Hero
@@ -99,16 +76,15 @@ public class Dungeon {
 			// let the player bail out if desired
 			pause = user.bailOut();
 
-		}// end battle loop
+		}
 
 		if (!theMonster.isAlive())
 			System.out.println(theHero.getName() + " was victorious!");
 		else if (!theHero.isAlive())
 			System.out.println(theHero.getName() + " was defeated :-(");
 		else
-			// both are alive so user quit the game
 			System.out.println("Quitters never win ;-)");
 
-	}// end battle method
+	}
 
-}// end Dungeon class
+}
