@@ -23,7 +23,7 @@ public class PromptUser {
 		this.kb = new Scanner(System.in);
 	}
 
-	public Hero chooseHero(String[] characterClasses) {
+	public Hero forHeroChoice(String[] characterClasses) {
 		String choice = promptForCharacter(characterClasses);
 
 		int option = Integer.parseInt(choice);
@@ -31,7 +31,7 @@ public class PromptUser {
 
 		return builder.buildHero();
 
-	}// end chooseHero method
+	}
 
 	private String promptForCharacter(String[] characterClasses) {
 		String choice;
@@ -64,7 +64,7 @@ public class PromptUser {
 		System.out.print("Choice: ");
 	}
 
-	public boolean playAgain() {
+	public boolean forPlayingAgain() {
 		String again;
 
 		System.out.println("Play again (y/n)?");
@@ -73,7 +73,7 @@ public class PromptUser {
 		return (again.equalsIgnoreCase("Y"));
 	}
 
-	public String bailOut() {
+	public String forBailingOut() {
 		System.out.print("\n-->q to quit, press enter to continue: ");
 		return kb.nextLine();
 	}
@@ -113,7 +113,7 @@ public class PromptUser {
 		System.out.println("2. Crushing Blow on Opponent");
 	}
 
-	public String forName() {
+	public String forCharacterName() {
 		String str, pattern = "[A-z]+";
 
 		do {
@@ -126,7 +126,7 @@ public class PromptUser {
 		return str;
 	}
 
-	public void close() {
+	public void closePrompt() {
 		this.kb.close();
 	}
 }

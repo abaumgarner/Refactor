@@ -42,13 +42,13 @@ public class Dungeon {
 		MonsterBuilder monsterBuilder = new MonsterBuilder();
 
 		do {
-			theHero = user.chooseHero(characterClasses);
+			theHero = user.forHeroChoice(characterClasses);
 			theMonster = monsterBuilder.buildMonster();
 			battle(theHero, theMonster);
 
-		} while (user.playAgain());
+		} while (user.forPlayingAgain());
 
-		user.close();
+		user.closePrompt();
 	}
 
 	/*-------------------------------------------------------------------
@@ -74,7 +74,7 @@ public class Dungeon {
 				theMonster.attack(theHero);
 
 			// let the player bail out if desired
-			pause = user.bailOut();
+			pause = user.forBailingOut();
 
 		}
 

@@ -18,12 +18,6 @@ public class Gremlin extends Monster {
 		super.setChanceToHit(.8);
 		super.setDamageMin(15);
 		super.setDamageMax(30);
-
-		/*
-		 * Monster(String name, int hitPoints, int attackSpeed, double
-		 * chanceToHit, double chanceToHeal, int damageMin, int damageMax, int
-		 * minHeal, int maxHeal)
-		 */
 	}// end constructor
 
 	public void attack(DungeonCharacter opponent) {

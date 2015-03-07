@@ -48,7 +48,7 @@ public abstract class Hero extends DungeonCharacter {
 	 This method is called by: hero constructor
 	 ---------------------------------------------------------*/
 	public void setName() {
-		name = prompt.forName();
+		name = prompt.forCharacterName();
 	}// end readName method
 
 	/*-------------------------------------------------------

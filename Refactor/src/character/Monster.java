@@ -11,15 +11,13 @@ public abstract class Monster extends DungeonCharacter {
 	protected double chanceToHeal;
 	protected int minHeal, maxHeal;
 
-	// -----------------------------------------------------------------
 	public Monster(double chanceToHeal, int minHeal, int maxHeal) {
 		this.chanceToHeal = chanceToHeal;
 		this.maxHeal = maxHeal;
 		this.minHeal = minHeal;
 
-	}// end monster construcotr
+	}
 
-	// -----------------------------------------------------------------
 	public void heal() {
 		boolean canHeal;
 		int healPoints;
@@ -34,15 +32,13 @@ public abstract class Monster extends DungeonCharacter {
 					+ " points.\n" + "Total hit points remaining are: "
 					+ hitPoints);
 			System.out.println();
-		}// end can heal
+		}
 
-	}// end heal method
+	}
 
-	// -----------------------------------------------------------------
 	public void subtractHitPoints(int hitPoints) {
 		super.subtractHitPoints(hitPoints);
 		heal();
+	}
 
-	}// end method
-
-}// end Monster class
+}

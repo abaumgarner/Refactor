@@ -17,13 +17,12 @@ public class Skeleton extends Monster {
 		super.setChanceToHit(.8);
 		super.setDamageMin(30);
 		super.setDamageMax(50);
-	}// end constructor
+	}
 
 	public void attack(DungeonCharacter opponent) {
 		System.out.println(name + " slices his rusty blade at "
 				+ opponent.getName() + ":");
 		super.attack(opponent);
+	}
 
-	}// end override of attack
-
-}// end class Skeleton
+}
