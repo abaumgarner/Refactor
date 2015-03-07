@@ -19,6 +19,7 @@ public class Thief extends Hero {
 		super.setChanceToHit(.8);
 		super.setDamageMin(20);
 		super.setDamageMax(40);
+		super.setName(prompt.forCharacterName());
 	}
 
 	public void surpriseAttack(DungeonCharacter opponent) {

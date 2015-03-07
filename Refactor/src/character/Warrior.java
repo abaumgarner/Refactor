@@ -19,6 +19,7 @@ public class Warrior extends Hero {
 		super.setChanceToHit(.8);
 		super.setDamageMin(35);
 		super.setDamageMax(60);
+		super.setName(prompt.forCharacterName());
 
 	}
 

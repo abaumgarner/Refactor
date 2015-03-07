@@ -21,6 +21,7 @@ public class Sorceress extends Hero {
 		super.setChanceToHit(.7);
 		super.setDamageMin(25);
 		super.setDamageMax(50);
+		super.setName(prompt.forCharacterName());
 	}
 
 	public void increaseHitPoints() {

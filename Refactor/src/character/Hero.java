@@ -33,20 +33,7 @@ public abstract class Hero extends DungeonCharacter {
 
 	public Hero(double chanceToBlock) {
 		this.chanceToBlock = chanceToBlock;
-		setName();
-	}
-
-	/*-------------------------------------------------------
-	 readName obtains a name for the hero from the user
-
-	 Receives: nothing
-	 Returns: nothing
-
-	 This method calls: nothing
-	 This method is called by: hero constructor
-	 ---------------------------------------------------------*/
-	public void setName() {
-		name = prompt.forCharacterName();
+		
 	}
 
 	/*-------------------------------------------------------
