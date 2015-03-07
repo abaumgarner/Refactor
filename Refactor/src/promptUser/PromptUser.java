@@ -5,6 +5,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import character.Hero;
+import character.Sorceress;
+import character.Thief;
+import character.Warrior;
 import characterBuilders.HeroBuilder;
 
 /*
