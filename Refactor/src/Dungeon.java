@@ -1,3 +1,4 @@
+import battle.Battle;
 import character.Gremlin;
 import character.Hero;
 import character.Monster;
@@ -39,52 +40,20 @@ public class Dungeon {
 	public static void main(String[] args) {
 		Hero theHero;
 		Monster theMonster;
+		Battle battle = new Battle();
 		MonsterBuilder monsterBuilder = new MonsterBuilder();
+
+		System.out.println("Welcome to the Dungeon");
+		System.out.println("----------------------");
 
 		do {
 			theHero = user.forHeroChoice(characterClasses);
 			theMonster = monsterBuilder.buildMonster();
-			battle(theHero, theMonster);
+			battle.startBattle(theHero, theMonster, user);
 
 		} while (user.forPlayingAgain());
 
 		user.closePrompt();
-	}
-
-	/*-------------------------------------------------------------------
-	 battle is the actual combat portion of the game.  It requires a Hero
-	 and a Monster to be passed in.  Battle occurs in rounds.  The Hero
-	 goes first, then the Monster.  At the conclusion of each round, the
-	 user has the option of quitting.
-	 ---------------------------------------------------------------------*/
-	public static void battle(Hero theHero, Monster theMonster) {
-		String pause = "p";
-		System.out.println(theHero.getName() + " battles "
-				+ theMonster.getName());
-		System.out.println("---------------------------------------------");
-
-		// do battle
-		while (theHero.isAlive() && theMonster.isAlive()
-				&& !pause.equalsIgnoreCase("q")) {
-			// hero goes first
-			theHero.battleChoices(theMonster);
-
-			// monster's turn (provided it's still alive!)
-			if (theMonster.isAlive())
-				theMonster.attack(theHero);
-
-			// let the player bail out if desired
-			pause = user.forBailingOut();
-
-		}
-
-		if (!theMonster.isAlive())
-			System.out.println(theHero.getName() + " was victorious!");
-		else if (!theHero.isAlive())
-			System.out.println(theHero.getName() + " was defeated :-(");
-		else
-			System.out.println("Quitters never win ;-)");
-
 	}
 
 }

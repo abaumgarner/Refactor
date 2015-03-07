@@ -31,8 +31,6 @@ public abstract class Hero extends DungeonCharacter {
 	protected int numTurns;
 	PromptUser prompt = new PromptUser();
 
-	// -----------------------------------------------------------------
-	// calls base constructor and gets name of hero from user
 	public Hero(double chanceToBlock) {
 		this.chanceToBlock = chanceToBlock;
 		setName();
@@ -49,7 +47,7 @@ public abstract class Hero extends DungeonCharacter {
 	 ---------------------------------------------------------*/
 	public void setName() {
 		name = prompt.forCharacterName();
-	}// end readName method
+	}
 
 	/*-------------------------------------------------------
 	 defend determines if hero blocks attack
@@ -62,7 +60,7 @@ public abstract class Hero extends DungeonCharacter {
 	 ---------------------------------------------------------*/
 	public boolean defend() {
 		return Math.random() <= chanceToBlock;
-	}// end defend method
+	}
 
 	/*-------------------------------------------------------
 	 subtractHitPoints checks to see if hero blocked attack, if so a message
@@ -83,7 +81,7 @@ public abstract class Hero extends DungeonCharacter {
 			super.subtractHitPoints(hitPoints);
 		}
 
-	}// end method
+	}
 
 	/*-------------------------------------------------------
 	 battleChoices will be overridden in derived classes.  It computes the
@@ -105,6 +103,6 @@ public abstract class Hero extends DungeonCharacter {
 
 		System.out.println("Number of turns this round is: " + numTurns);
 
-	}// end battleChoices
+	}
 
-}// end Hero class
+}

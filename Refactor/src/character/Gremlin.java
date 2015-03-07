@@ -18,13 +18,13 @@ public class Gremlin extends Monster {
 		super.setChanceToHit(.8);
 		super.setDamageMin(15);
 		super.setDamageMax(30);
-	}// end constructor
+	}
 
 	public void attack(DungeonCharacter opponent) {
 		System.out.println(name + " jabs his kris at " + opponent.getName()
 				+ ":");
 		super.attack(opponent);
 
-	}// end override of attack
+	}
 
-}// end class Gremlin
+}

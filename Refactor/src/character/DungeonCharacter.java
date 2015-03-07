@@ -40,12 +40,8 @@ public abstract class DungeonCharacter implements Comparable<Object> {
 
 	public DungeonCharacter() {
 
-	}// end constructor
+	}
 
-	/*
-	 * Added sets
-	 */
-	
 	void setName(String str) {
 		this.name = str;
 	}
