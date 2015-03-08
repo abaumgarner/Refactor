@@ -40,7 +40,7 @@ public class Dungeon {
 	public static void main(String[] args) {
 		Hero theHero;
 		Monster theMonster;
-		Battle battle = new Battle();
+		Battle battle;
 		MonsterBuilder monsterBuilder = new MonsterBuilder();
 
 		System.out.println("Welcome to the Dungeon");
@@ -49,8 +49,9 @@ public class Dungeon {
 		do {
 			theHero = user.forHeroChoice(characterClasses);
 			theMonster = monsterBuilder.buildMonster();
-			battle.startBattle(theHero, theMonster, user);
 
+			battle = new Battle(theHero, theMonster);
+			battle.startBattle(user);
 		} while (user.forPlayingAgain());
 
 		user.closePrompt();

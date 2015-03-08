@@ -73,9 +73,9 @@ public class PromptUser {
 		return (again.equalsIgnoreCase("Y"));
 	}
 
-	public String forBailingOut() {
+	public boolean forBailingOut() {
 		System.out.print("\n-->q to quit, press enter to continue: ");
-		return kb.nextLine();
+		return kb.nextLine().equalsIgnoreCase("q");
 	}
 
 	public int forAttack(String character) {
