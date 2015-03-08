@@ -1,0 +1,8 @@
+1) Removed Keyboard class and replaced it with prompt user with a Scanner object.
+2) Moved related clases to their own packages to make it more logically organized. Not sure if this counts as a refactor
+3) Added package sets to the DungeonCharacter class to allow for subclasses to easily set each field without sending massive parameters.
+4) Changed the dvc for the Hero class to only require the hero's chanceToBlock since all other parameters are handled in setters.
+5) Removed all the excess parameters being passed from the hero classes to DungeonCharacter and replaced them with calls to super setters. 
+6) Changed the dvc for the Monster class to only require chanceToHeal, minHeal, and maxHeal. Super class handles all other parms
+7) Removed all the excess parameters passed from each monster class and replaced them with super class setters.
+8) 
