@@ -27,9 +27,9 @@ public class PromptUser {
 		String choice = promptForCharacter(characterClasses);
 
 		int option = Integer.parseInt(choice);
-		HeroBuilder builder = new HeroBuilder(characterClasses[option - 1]);
+		HeroBuilder builder = new HeroBuilder();
 
-		return builder.buildHero();
+		return builder.buildHero(characterClasses[option - 1]);
 
 	}
 

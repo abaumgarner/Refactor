@@ -1,8 +1,10 @@
-1) Removed Keyboard class and replaced it with prompt user with a Scanner object.
+1) Removed Keyboard class and replaced it with prompt user with a Scanner object. All user input is run through this object and regexs are used to check the input data.
 2) Moved related clases to their own packages to make it more logically organized. Not sure if this counts as a refactor
 3) Added package sets to the DungeonCharacter class to allow for subclasses to easily set each field without sending massive parameters.
 4) Changed the dvc for the Hero class to only require the hero's chanceToBlock since all other parameters are handled in setters.
 5) Removed all the excess parameters being passed from the hero classes to DungeonCharacter and replaced them with calls to super setters. 
 6) Changed the dvc for the Monster class to only require chanceToHeal, minHeal, and maxHeal. Super class handles all other parms
 7) Removed all the excess parameters passed from each monster class and replaced them with super class setters.
-8) 
+8) Created a builder for Hero Characters. This class just needs the type of hero you want and it will create it and return it. This allows the driver class to only have to care that it has a hero and not what type.
+9) Created a builder for Monster Characters. When you create a new instance of MonsterBuilder, a random number is generated, this number is used as the index of a String [] of all the currently implemented monsters. When the buildMonster method is called the apporiate monster object is returned.
+10) Abstracted out the battle method into it's own class. The DVC for the object requires a hero and monster, then sets these as global varibles. This allows the driver class to not have to worry about handling the battle logic. It just tells the battle object to start the battle.

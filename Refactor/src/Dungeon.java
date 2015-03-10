@@ -41,12 +41,13 @@ public class Dungeon {
 		Hero theHero;
 		Monster theMonster;
 		Battle battle;
-		MonsterBuilder monsterBuilder = new MonsterBuilder();
+		MonsterBuilder monsterBuilder;
 
 		System.out.println("Welcome to the Dungeon");
 		System.out.println("----------------------");
 
 		do {
+			monsterBuilder = new MonsterBuilder();
 			theHero = user.forHeroChoice(characterClasses);
 			theMonster = monsterBuilder.buildMonster();
 

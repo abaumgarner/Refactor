@@ -6,21 +6,13 @@ import character.Thief;
 import character.Warrior;
 
 public class HeroBuilder {
-	private String heroClass;
-
-	@SuppressWarnings("unused")
-	private HeroBuilder() {
-		this("Thief");
+	public HeroBuilder() {
 	}
 
-	public HeroBuilder(String str) {
-		this.heroClass = str;
-	}
-
-	public Hero buildHero() {
-		if (this.heroClass.equalsIgnoreCase("Warrior"))
+	public Hero buildHero(String str) {
+		if (str.equalsIgnoreCase("Warrior"))
 			return new Warrior();
-		else if (this.heroClass.equalsIgnoreCase("Sorceress"))
+		else if (str.equalsIgnoreCase("Sorceress"))
 			return new Sorceress();
 		return new Thief();
 	}

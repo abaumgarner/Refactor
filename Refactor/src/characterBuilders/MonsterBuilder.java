@@ -7,14 +7,14 @@ import character.Skeleton;
 
 public class MonsterBuilder {
 	private String monsterClass;
-	private String[] monsters = { "Ogre", "Gremlin", "Skeleton" };
+	private final String[] monsters = { "Ogre", "Gremlin", "Skeleton" };
 
 	public MonsterBuilder() {
 		this.monsterClass = generateMonsterClass();
 	}
 
 	private String generateMonsterClass() {
-		int choice = (int) (Math.random() * 3);
+		int choice = (int) (Math.random() * monsters.length);
 
 		return monsters[choice];
 	}
