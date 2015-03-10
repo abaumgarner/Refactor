@@ -8,3 +8,7 @@
 8) Created a builder for Hero Characters. This class just needs the type of hero you want and it will create it and return it. This allows the driver class to only have to care that it has a hero and not what type.
 9) Created a builder for Monster Characters. When you create a new instance of MonsterBuilder, a random number is generated, this number is used as the index of a String [] of all the currently implemented monsters. When the buildMonster method is called the apporiate monster object is returned.
 10) Abstracted out the battle method into it's own class. The DVC for the object requires a hero and monster, then sets these as global varibles. This allows the driver class to not have to worry about handling the battle logic. It just tells the battle object to start the battle.
+11) Removed all used imports in all classes. It it is not used there is no need to have it. It  ust adds extra overhead.
+12) Removed some excess commenting. There were some comments used to seperate methods in classes. I found this to be not needed and cluttered the code a little. Not much of an improvement but it is a code smell.
+13) Changed the visibilty of the DungeonCharacter's fields to private since it is now using setters for all parameters.
+14) Replaced plain calls to super fields with get methods to keep all fields private.

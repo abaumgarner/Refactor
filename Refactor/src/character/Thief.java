@@ -13,20 +13,20 @@ public class Thief extends Hero {
 
 	public Thief() {
 		super(.5);
-		super.setName("Thief");
-		super.setHitPoints(75);
-		super.setAttackSpeed(6);
-		super.setChanceToHit(.8);
-		super.setDamageMin(20);
-		super.setDamageMax(40);
-		super.setName(prompt.forCharacterName());
+		this.setName("Thief");
+		this.setHitPoints(75);
+		this.setAttackSpeed(6);
+		this.setChanceToHit(.8);
+		this.setDamageMin(20);
+		this.setDamageMax(40);
+		this.setName(prompt.forCharacterName());
 	}
 
 	public void surpriseAttack(DungeonCharacter opponent) {
 		double surprise = Math.random();
 		if (surprise <= .4) {
-			System.out.println("Surprise attack was successful!\n" + name
-					+ " gets an additional turn.");
+			System.out.println("Surprise attack was successful!\n"
+					+ this.getName() + " gets an additional turn.");
 			numTurns++;
 			attack(opponent);
 		} else if (surprise >= .9) {
@@ -37,6 +37,7 @@ public class Thief extends Hero {
 
 	}
 
+	@Override
 	public void battleChoices(DungeonCharacter opponent) {
 		super.battleChoices(opponent);
 		int choice;

@@ -1,9 +1,6 @@
 import battle.Battle;
-import character.Gremlin;
 import character.Hero;
 import character.Monster;
-import character.Ogre;
-import character.Skeleton;
 import characterBuilders.MonsterBuilder;
 import promptUser.PromptUser;
 

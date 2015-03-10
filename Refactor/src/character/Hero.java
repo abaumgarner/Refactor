@@ -33,7 +33,7 @@ public abstract class Hero extends DungeonCharacter {
 
 	public Hero(double chanceToBlock) {
 		this.chanceToBlock = chanceToBlock;
-		
+
 	}
 
 	/*-------------------------------------------------------
@@ -63,7 +63,7 @@ public abstract class Hero extends DungeonCharacter {
 	 ---------------------------------------------------------*/
 	public void subtractHitPoints(int hitPoints) {
 		if (defend()) {
-			System.out.println(name + " BLOCKED the attack!");
+			System.out.println(this.getName() + " BLOCKED the attack!");
 		} else {
 			super.subtractHitPoints(hitPoints);
 		}
@@ -83,7 +83,7 @@ public abstract class Hero extends DungeonCharacter {
 	 This method is called by: external sources
 	 ---------------------------------------------------------*/
 	public void battleChoices(DungeonCharacter opponent) {
-		numTurns = attackSpeed / opponent.getAttackSpeed();
+		numTurns = this.getAttackSpeed() / opponent.getAttackSpeed();
 
 		if (numTurns == 0)
 			numTurns++;

@@ -11,16 +11,17 @@ public class Skeleton extends Monster {
 
 	public Skeleton() {
 		super(.3, 30, 50);
-		super.setName("Sargath the Skeleton");
-		super.setHitPoints(100);
-		super.setAttackSpeed(3);
-		super.setChanceToHit(.8);
-		super.setDamageMin(30);
-		super.setDamageMax(50);
+		this.setName("Sargath the Skeleton");
+		this.setHitPoints(100);
+		this.setAttackSpeed(3);
+		this.setChanceToHit(.8);
+		this.setDamageMin(30);
+		this.setDamageMax(50);
 	}
 
+	@Override
 	public void attack(DungeonCharacter opponent) {
-		System.out.println(name + " slices his rusty blade at "
+		System.out.println(this.getName() + " slices his rusty blade at "
 				+ opponent.getName() + ":");
 		super.attack(opponent);
 	}

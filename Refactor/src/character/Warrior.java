@@ -26,21 +26,24 @@ public class Warrior extends Hero {
 	public void crushingBlow(DungeonCharacter opponent) {
 		if (Math.random() <= .4) {
 			int blowPoints = (int) (Math.random() * 76) + 100;
-			System.out.println(name + " lands a CRUSHING BLOW for "
+			System.out.println(this.getName() + " lands a CRUSHING BLOW for "
 					+ blowPoints + " damage!");
 			opponent.subtractHitPoints(blowPoints);
 		} else {
-			System.out.println(name + " failed to land a crushing blow");
+			System.out.println(this.getName()
+					+ " failed to land a crushing blow");
 			System.out.println();
 		}
 	}
 
+	@Override
 	public void attack(DungeonCharacter opponent) {
-		System.out.println(name + " swings a mighty sword at "
+		System.out.println(this.getName() + " swings a mighty sword at "
 				+ opponent.getName() + ":");
 		super.attack(opponent);
 	}
 
+	@Override
 	public void battleChoices(DungeonCharacter opponent) {
 		int choice;
 		PromptUser prompt = new PromptUser();
