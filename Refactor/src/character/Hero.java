@@ -27,7 +27,7 @@ import promptUser.PromptUser;
  */
 
 public abstract class Hero extends DungeonCharacter {
-	protected double chanceToBlock;
+	private double chanceToBlock;
 	protected int numTurns;
 	PromptUser prompt = new PromptUser();
 

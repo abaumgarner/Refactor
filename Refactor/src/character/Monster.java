@@ -8,8 +8,8 @@ package character;
  */
 
 public abstract class Monster extends DungeonCharacter {
-	protected double chanceToHeal;
-	protected int minHeal, maxHeal;
+	private double chanceToHeal;
+	private int minHeal, maxHeal;
 
 	public Monster(double chanceToHeal, int minHeal, int maxHeal) {
 		this.chanceToHeal = chanceToHeal;

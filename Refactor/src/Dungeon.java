@@ -1,7 +1,7 @@
 import battle.Battle;
 import character.Hero;
 import character.Monster;
-import characterBuilders.MonsterBuilder;
+import characterBuilders.MonsterFactory;
 import promptUser.PromptUser;
 
 /**
@@ -38,15 +38,15 @@ public class Dungeon {
 		Hero theHero;
 		Monster theMonster;
 		Battle battle;
-		MonsterBuilder monsterBuilder;
+		MonsterFactory monsterBuilder;
 
 		System.out.println("Welcome to the Dungeon");
 		System.out.println("----------------------");
 
 		do {
-			monsterBuilder = new MonsterBuilder();
+			monsterBuilder = new MonsterFactory();
 			theHero = user.forHeroChoice(characterClasses);
-			theMonster = monsterBuilder.buildMonster();
+			theMonster = monsterBuilder.generateMonster();
 
 			battle = new Battle(theHero, theMonster);
 			battle.startBattle(user);

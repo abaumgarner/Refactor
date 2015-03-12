@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import character.Hero;
-import characterBuilders.HeroBuilder;
+import characterBuilders.HeroFactory;
 
 /*
  * Aaron Baumgarner
@@ -24,9 +24,9 @@ public class PromptUser {
 		String choice = forCharacter(characterClasses);
 
 		int option = Integer.parseInt(choice);
-		HeroBuilder builder = new HeroBuilder();
+		HeroFactory builder = new HeroFactory();
 
-		return builder.buildHero(characterClasses[option - 1]);
+		return builder.generateHero(characterClasses[option - 1]);
 
 	}
 
