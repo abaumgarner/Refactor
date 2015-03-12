@@ -26,17 +26,13 @@ package character;
  * @version 1.0
  */
 
-public abstract class DungeonCharacter implements Comparable<Object> {
+public abstract class DungeonCharacter {
 
 	private String name;
 	private int hitPoints;
 	private int attackSpeed;
 	private double chanceToHit;
 	private int damageMin, damageMax;
-
-	public int compareTo(Object o) {
-		return 1;
-	}
 
 	public DungeonCharacter() {
 

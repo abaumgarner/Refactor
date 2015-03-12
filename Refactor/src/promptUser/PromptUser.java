@@ -21,7 +21,7 @@ public class PromptUser {
 	}
 
 	public Hero forHeroChoice(String[] characterClasses) {
-		String choice = promptForCharacter(characterClasses);
+		String choice = forCharacter(characterClasses);
 
 		int option = Integer.parseInt(choice);
 		HeroBuilder builder = new HeroBuilder();
@@ -30,7 +30,7 @@ public class PromptUser {
 
 	}
 
-	private String promptForCharacter(String[] characterClasses) {
+	private String forCharacter(String[] characterClasses) {
 		String choice;
 
 		do {
@@ -84,7 +84,7 @@ public class PromptUser {
 			if (character.equalsIgnoreCase("Warrior"))
 				displayWarriorSpecialAttack();
 			else if (character.equalsIgnoreCase("Sorceress"))
-				displaySorceressSpecailAttack();
+				displaySorceressSpecialAttack();
 			else
 				displayThiefSpecialAttack();
 
@@ -102,7 +102,7 @@ public class PromptUser {
 		System.out.println("2. Surprise Attack");
 	}
 
-	private void displaySorceressSpecailAttack() {
+	private void displaySorceressSpecialAttack() {
 		System.out.println("2. Increase Hit Points");
 	}
 
